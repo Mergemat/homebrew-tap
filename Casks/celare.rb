@@ -1,8 +1,8 @@
 # Rendered into Mergemat/homebrew-tap as Casks/celare.rb by
 # .github/workflows/release.yml.
 cask "celare" do
-  version "0.1.4"
-  sha256 "3f9d651d5754ad4f0dfad2e2bffec7c0d9685fdefbf1c6f02d67c8735f20c292"
+  version "0.1.5"
+  sha256 "7546f1a21b99435eb7f82178af78530db72b655aea8aff5385843d79be46cd48"
 
   url "https://github.com/Mergemat/celare/releases/download/v#{version}/Celare-#{version}.zip"
   name "celare"
