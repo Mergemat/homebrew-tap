@@ -1,12 +1,12 @@
 # Rendered into Mergemat/homebrew-tap as Casks/celare.rb by
 # .github/workflows/release.yml.
 cask "celare" do
-  version "0.1.1"
-  sha256 "01d6ac1de6f7ca999ee1c6b7283e6d8a77f1213a10044722afa6f995e7cbb5a3"
+  version "0.1.2"
+  sha256 "a105e546775b28fdfa049e0af2b0e2835544d494de7801ef90c7cdb6f9d74bc9"
 
   url "https://github.com/Mergemat/celare/releases/download/v#{version}/Celare-#{version}.zip"
   name "celare"
-  desc "Agent-friendly VPN client for every protocol 3x-ui serves"
+  desc "Agent-friendly VPN client for VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and WireGuard"
   homepage "https://github.com/Mergemat/celare"
 
   depends_on macos: :sonoma
