@@ -1,8 +1,8 @@
 # Rendered into Mergemat/homebrew-tap as Casks/tegi.rb by
 # .github/workflows/release.yml.
 cask "tegi" do
-  version "0.3.5"
-  sha256 "98563ed8cb70ea0abac75b32eea05b8f62d94e161f9d11152c75d796541acfcb"
+  version "0.3.6"
+  sha256 "17d1089e171fe99ffcd43458004f7ae2faa6e8b2ea81f83d6ceb71643ea82fed"
 
   url "https://github.com/Mergemat/tegi/releases/download/v#{version}/tegi-#{version}.zip"
   name "tegi"
