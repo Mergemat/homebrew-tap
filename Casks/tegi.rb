@@ -1,14 +1,15 @@
 # Rendered into Mergemat/homebrew-tap as Casks/tegi.rb by
 # .github/workflows/release.yml.
 cask "tegi" do
-  version "0.3.7"
-  sha256 "a5d0e18162cc91013a279786bb7c4b18b61784d7e7163baacd06af9ebf7a592b"
+  version "0.4.0"
+  sha256 "7ecb20c92e1bfcdd95f4e0aff273a300c5d9fcab1cb9fd1c5dc3153de444d92f"
 
   url "https://github.com/Mergemat/tegi/releases/download/v#{version}/tegi-#{version}.zip"
   name "tegi"
   desc "Scrollable tiling window manager"
   homepage "https://github.com/Mergemat/tegi"
 
+  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "tegi.app"
@@ -22,7 +23,9 @@ cask "tegi" do
     run "/usr/bin/open", args: ["{{appdir}}/tegi.app"], must_succeed: false
   end
 
-  uninstall quit: "io.github.mergemat.tegi"
+  # Direct motion's passwordless Dock helper, if it was ever turned on.
+  uninstall quit:   "io.github.mergemat.tegi",
+            delete: ["/Library/PrivilegedHelperTools/tegi-dock-loader", "/etc/sudoers.d/tegi"]
 
   zap trash: "~/.config/tegi"
 
