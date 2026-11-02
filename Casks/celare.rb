@@ -1,8 +1,8 @@
 # Rendered into Mergemat/homebrew-tap as Casks/celare.rb by
 # .github/workflows/release.yml.
 cask "celare" do
-  version "0.2.7"
-  sha256 "5c26db8ddb73b928cebdb744cd1cbf897400053385c96e4a63ee2065aeceef98"
+  version "0.2.8"
+  sha256 "89bb397f528809f62a0e6c0bf18e5627d9ddf7ae664eb63667da724ceb19e3c3"
 
   url "https://github.com/Mergemat/celare/releases/download/v#{version}/Celare-#{version}.zip"
   name "celare"
@@ -18,8 +18,10 @@ cask "celare" do
     # The app is signed ad hoc, not notarized; Homebrew already checked the
     # download against the sha256 above.
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Celare.app"]
-    # Install (or, on upgrade, replace) the background service. If this is
-    # skipped, the app offers the same step on first launch.
+    # Install (or, on upgrade, replace) the background service. Only sudo
+    # steps escape brew's sandbox, which blocks the macOS admin dialog, so
+    # without a terminal this fails: the app's Update button and the CLI's
+    # next command then say the service is older.
     run "{{appdir}}/Celare.app/Contents/Resources/celare",
         args:         ["service", "install"],
         sudo:         true,
